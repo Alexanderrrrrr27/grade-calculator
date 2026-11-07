@@ -3,11 +3,23 @@ print("===== STUDENT GRADE CALCULATOR =====")
 
 name = input("Enter student name: ")
 
-prelim = float(input("Enter Prelim grade: "))
-midterm = float(input("Enter Midterm grade: "))
-finals = float(input("Enter Finals grade: "))
+grades = []
 
-average = (prelim + midterm + finals) / 3
+for subject in ["Prelim", "Midterm", "Finals"]:
+    while True:
+        try:
+            grade = float(input(f"Enter {subject} grade: "))
+
+            if 0 <= grade <= 100:
+                grades.append(grade)
+                break
+            else:
+                print("Please enter a grade from 0 to 100.")
+
+        except ValueError:
+            print("Invalid input. Please enter a number.")
+
+average = sum(grades) / len(grades)
 
 print("\n===== GRADE RESULT =====")
 print("Student Name:", name)
@@ -23,3 +35,5 @@ elif average >= 75:
     print("Rating: Passed")
 else:
     print("Rating: Failed")
+
+print("\nThank you for using the Grade Calculator!")
