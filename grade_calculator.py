@@ -36,4 +36,9 @@ elif average >= 75:
 else:
     print("Rating: Failed")
 
+if average >= 75:
+    print("Congratulations! You passed!")
+else:
+    print("Better luck next time! Keep studying!")
+
 print("\nThank you for using the Grade Calculator!")
